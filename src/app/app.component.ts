@@ -12,8 +12,8 @@ export class AppComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
   ngOnInit() {
     this.myForm = this.fb.group({
-      fullName: ['',[Validators.required, Validators.minLength(2)]],
-      email: [''],
+      fullName: ['',[Validators.minLength(2), Validators.required]],
+      email: ['', [Validators.email]],
       skills: this.fb.group({
         skillTitle: [''],
         experienceInYears: [''],
@@ -23,6 +23,8 @@ export class AppComponent implements OnInit {
   }
 
   save() {
+    this.myForm.get('fullName').clearValidators();
+    this.myForm.get('fullName').updateValueAndValidity();
     console.log(this.myForm)
   }
 
@@ -36,5 +38,10 @@ export class AppComponent implements OnInit {
         level: 'advanced'
       }
     })
+  }
+
+  changeValidity() {
+    this.myForm.get('fullName').setValidators([Validators.required, Validators.minLength(2)]);
+    this.myForm.get('fullName').updateValueAndValidity()
   }
 }

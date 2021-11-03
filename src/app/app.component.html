@@ -3,13 +3,17 @@
   <div class="mb-3">
     <label for="formGroupExampleInput" class="form-label">First Name</label>
     <input
+      (blur)='changeValidity()'
       type="text"
       class="form-control"
       id="formGroupExampleInput"
       placeholder="Full name"
       formControlName="fullName"
-      [ngClass]="{'is-invalid': myForm.get('fullName').errors && myForm.get('fullName').touched }"
+      [ngClass]="{'is-invalid': myForm.get('fullName' ).errors && myForm.get('fullName').touched }"
     />
+    <div class="invalid-feedback">
+    Please provide your full name
+    </div>
   </div>
 
   <div class="mb-3 ">

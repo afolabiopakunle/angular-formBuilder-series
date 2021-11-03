@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  imports:      [ BrowserModule, ReactiveFormsModule ],
+  imports:      [ BrowserModule, CommonModule,ReactiveFormsModule ],
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })

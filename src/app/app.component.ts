@@ -27,6 +27,14 @@ export class AppComponent implements OnInit {
   }
 
   loadData() {
-
+    this.myForm.setValue({
+      fullName: 'Afolabi Opakunle',
+      email: 'opakunleafolabi@gmail.com',
+      skills: {
+        experienceInYears: 8,
+        skillTitle: 'Angular',
+        level: 'advanced'
+      }
+    })
   }
 }

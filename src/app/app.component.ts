@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   save() {
     this.myForm.get('fullName').clearValidators();
     this.myForm.get('fullName').updateValueAndValidity();
-    console.log(this.myForm)
+    console.log(this.myForm.get('skills.level').value)
   }
 
   loadData() {
